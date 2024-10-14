@@ -9,3 +9,5 @@ echo "Running Before Install Script"
 
 apt update -y
 apt upgrade -y
+npm i
+npm run build
