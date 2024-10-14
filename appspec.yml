@@ -1,0 +1,21 @@
+version: 0.0
+os: linux
+files:
+  - source: /                  # Source directory in the GitHub repository
+    destination: /path/to/your/application  # Destination on the EC2 instance
+
+hooks:
+  BeforeInstall:
+    - location: scripts/before_install.sh  # Path to the script relative to your source
+      timeout: 300
+      runas: root
+
+  AfterInstall:
+    - location: scripts/after_install.sh   # Path to the script relative to your source
+      timeout: 300
+      runas: root
+
+  ApplicationStart:
+    - location: scripts/start_application.sh # Path to the script relative to your source
+      timeout: 300
+      runas: root
