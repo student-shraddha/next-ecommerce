@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Navigate to the application directory
-cd /opt/codedeploy-agent/deployment-root/6b279fec-32b6-4172-ab6c-5471e5f13219/  # Change to the correct application path
+cd /opt/codedeploy-agent/deployment-root/6b279fec-32b6-4172-ab6c-5471e5f13219/d-LL4O57SWJ/deployment-archive/opt/codedeploy-agent/deployment-root/6b279fec-32b6-4172-ab6c-5471e5f13219/d-03HESTY87/deployment-archive/  # Change to the correct application path
 
 # Install any dependencies if necessary
 echo "Installing dependencies..."
