@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /                  # Source directory in the GitHub repository
-    destination: /path/to/your/application  # Destination on the EC2 instance
+    destination: /root/  # Destination on the EC2 instance
 
 hooks:
   BeforeInstall:
