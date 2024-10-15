@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /  # Source directory in the GitHub repository
-    destination: /opt/codedeploy-agent/deployment-root/scripts/   # Destination on the EC2 instance
+    destination: /opt/codedeploy-agent/deployment-root/   # Destination on the EC2 instance
 
 hooks:
   BeforeInstall:
