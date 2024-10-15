@@ -1,0 +1,10 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - echo "Moving package.json to the expected directory..."
+      - mv /opt/codedeploy-agent/deployment-root/6b279fec-32b6-4172-ab6c-5471e5f13219/d-R3V7PNK97/deployment-archive/package.json ./  # Adjust path to where package.json is
+artifacts:
+  files:
+    - '**/*'  # Include all necessary files in the artifact
