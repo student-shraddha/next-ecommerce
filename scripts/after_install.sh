@@ -1,28 +1,15 @@
 #!/bin/bash
+set -e
 
-# Exit immediately if a command exits with a non-zero status
-#set -e
+# Locate the latest deployment directory
+DEPLOYMENT_DIR=$(ls -dt /opt/codedeploy-agent/deployment-root/*/ | head -1)
 
-# Install Node.js
-echo "Setting up Node.js repository..."
-curl -fsSL https://deb.nodesource.com/setup_current.x | sudo -E bash -
+# Check if package.json exists in this directory
+if [ ! -f "$DEPLOYMENT_DIR/package.json" ]; then
+    echo "Error: package.json not found in $DEPLOYMENT_DIR"
+    exit 1
+fi
 
-echo "Installing Node.js..."
-sudo apt install -y nodejs
+echo "package.json found, proceeding with installation..."
+cd "$DEPLOYMENT_DIR" && npm install
 
-# Verify the Node.js and npm installation
-echo "Node.js version:"
-node -v
-
-echo "npm version:"
-npm -v
-
-# Install pm2 globally using npm
-echo "Installing pm2 globally..."
-sudo npm install -g pm2
-
-# Verify pm2 installation
-echo "pm2 version:"
-pm2 -v
-
-echo "Installation complete."
