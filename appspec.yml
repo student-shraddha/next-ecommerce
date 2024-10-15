@@ -1,21 +1,18 @@
 version: 0.0
 os: linux
 files:
-  - source: /  # Source directory in the GitHub repository
-    destination: /opt/codedeploy-agent/deployment-root/   # Destination on the EC2 instance
-
+  - source: /  # Make sure this is correct
+    destination: /opt/codedeploy-agent/deployment-root/6b279fec-32b6-4172-ab6c-5471e5f13219/
 hooks:
   BeforeInstall:
-    - location: scripts/before_install.sh  # Path to the script relative to your source
+    - location: scripts/before_install.sh
       timeout: 300
-      runas: root  # Ensure the script runs as root
-
+      runas: root
   AfterInstall:
-    - location: scripts/after_install.sh   # Path to the script relative to your source
+    - location: scripts/after_install.sh
       timeout: 300
-      runas: root  # Ensure the script runs as root
-
+      runas: root
   ApplicationStart:
-    - location: scripts/start_application.sh  # Path to the script relative to your source
+    - location: scripts/start_application.sh
       timeout: 300
-      runas: root  # Ensure the script runs as root
+      runas: root
