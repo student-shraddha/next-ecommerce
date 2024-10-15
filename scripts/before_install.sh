@@ -1,20 +1,20 @@
 #!/bin/bash
+
+# Exit immediately if a command exits with a non-zero status
 set -e
 
-# Locate the deployment directory
-DEPLOYMENT_DIR=$(ls -dt /opt/codedeploy-agent/deployment-root/*/ | head -1)
+# Set the deployment directory
+DEPLOYMENT_DIR="/opt/codedeploy-agent/deployment-root/$DEPLOYMENT_ID"
 
-# Check if package.json is in a different directory within DEPLOYMENT_DIR
-PACKAGE_JSON_PATH=$(find "$DEPLOYMENT_DIR" -name package.json | head -1)
-
-if [ -z "$PACKAGE_JSON_PATH" ]; then
-    echo "Error: package.json not found in deployment."
+# Check for package.json
+if [ ! -f "$DEPLOYMENT_DIR/package.json" ]; then
+    echo "Error: package.json not found in $DEPLOYMENT_DIR"
     exit 1
-elif [ "$PACKAGE_JSON_PATH" != "$DEPLOYMENT_DIR/package.json" ]; then
-    echo "Moving package.json to expected location..."
-    mv "$PACKAGE_JSON_PATH" "$DEPLOYMENT_DIR/"
+else
+    echo "Found package.json in $DEPLOYMENT_DIR"
 fi
 
+# Install Node.js dependencies
 cd "$DEPLOYMENT_DIR"
 npm install
 
