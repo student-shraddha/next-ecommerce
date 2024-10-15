@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -e  # Exit immediately if a command exits with a non-zero status
 
 # Change to the deployment directory
 cd /opt/codedeploy-agent/deployment-root/6b279fec-32b6-4172-ab6c-5471e5f13219/ || { echo "Error: Directory not found"; exit 1; }
@@ -11,4 +11,4 @@ if [ ! -f package.json ]; then
 fi
 
 echo "package.json found, proceeding with installation..."
-# Proceed with your installation commands here
+# Proceed with installation or other commands
