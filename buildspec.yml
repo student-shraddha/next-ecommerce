@@ -5,10 +5,17 @@ phases:
     runtime-versions:
       nodejs: 14  # Specify your Node.js version
     commands:
-      - echo Installing dependencies...
+      - echo "Installing dependencies..."
       - npm install
+
+  build:
+    commands:
+      - echo "Building the application..."
+      - npm run build  # Adjust as necessary
 
 artifacts:
   files:
     - '**/*'  # Include all files in the output artifacts
-
+    - '!**/node_modules/**'  # Exclude node_modules if necessary
+    - 'package.json'  # Specifically include package.json
+    - 'yarn.lock'  # If you're using Yarn
