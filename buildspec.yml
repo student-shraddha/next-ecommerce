@@ -1,10 +1,34 @@
+
 version: 0.2
 
 phases:
+  install:
+    runtime-versions:
+      nodejs: 12
+
+    commands:
+      # install npm
+      - npm install
+
   build:
     commands:
-      - echo "Moving package.json to the expected directory..."
-      - mv /opt/codedeploy-agent/deployment-root/6b279fec-32b6-4172-ab6c-5471e5f13219/d-R3V7PNK97/deployment-archive/package.json ./  # Adjust path to where package.json is
+      # run build script
+      - npm build
+
 artifacts:
+  # include all files required to run application
+  # notably excluded is node_modules, as this will cause overwrite error on deploy
   files:
-    - '**/*'  # Include all necessary files in the artifact
+    - assets/**/*
+    - components/**/*
+    - containers/**/*
+    - pages/**/*
+    - public/**/*
+    - scripts/**/*
+    - settings/**/*
+    - styles/**/*
+    - jsconfig.json
+    - package.json
+    - appspec.yml
+    - postcss.config.js
+    - tailwind.config.js
