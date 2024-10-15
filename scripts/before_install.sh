@@ -1,20 +1,15 @@
+
 #!/bin/bash
+set -e  # Exit immediately if a command exits with a non-zero status
 
-# Exit immediately if a command exits with a non-zero status
-set -e
+# Define the deployment directory
+DEPLOYMENT_DIR="/opt/codedeploy-agent/deployment-root/$DEPLOYMENT_ID/deployment-archive"
 
-# Set the deployment directory
-DEPLOYMENT_DIR="/opt/codedeploy-agent/deployment-root/$DEPLOYMENT_ID"
-
-# Check for package.json
+# Check if package.json exists in the expected directory
 if [ ! -f "$DEPLOYMENT_DIR/package.json" ]; then
     echo "Error: package.json not found in $DEPLOYMENT_DIR"
     exit 1
-else
-    echo "Found package.json in $DEPLOYMENT_DIR"
 fi
 
-# Install Node.js dependencies
-cd "$DEPLOYMENT_DIR"
-npm install
-
+# Proceed with installation or other tasks
+echo "package.json found, proceeding with installation..."
