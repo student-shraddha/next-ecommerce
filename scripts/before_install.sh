@@ -3,7 +3,7 @@ set -e
 set -x
 
 # Define the application directory
-APP_DIR="/opt/codedeploy-agent/deployment-root/6b279fec-32b6-4172-ab6c-5471e5f13219/"  # Change to your app's deployment directory
+APP_DIR="/opt/codedeploy-agent/deployment-root/6b279fec-32b6-4172-ab6c-5471e5f13219/d-Y9ZWXIJ97/deployment-archive/scripts"  # Change to your app's deployment directory
 
 # Update and install Node.js
 sudo apt-get update -y
