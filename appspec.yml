@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: /opt/codedeploy-agent/deployment-root/6b279fec-32b6-4172-ab6c-5471e5f13219/  # Source directory in the GitHub repository
+  - source: /  # Source directory in the GitHub repository
     destination: /opt/codedeploy-agent/deployment-root/6b279fec-32b6-4172-ab6c-5471e5f13219/  # Destination on the EC2 instance
 
 hooks:
