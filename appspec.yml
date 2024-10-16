@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ec2-user/ /opt/codedeploy-agent/deployment-root/# Change this to your desired destination path
+    destination: /home/ec2-user/opt/codedeploy-agent/deployment-root/# Change this to your desired destination path
 
 hooks:
   BeforeInstall:
