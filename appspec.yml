@@ -2,8 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ec2-user/opt/codedeploy-agent/deployment-root/# Change this to your desired destination path
-
+    destination: opt/codedeploy-agent/deployment-root/ec0e87c3-2371-4d26-abd7-2c8659e89e71/
 hooks:
   BeforeInstall:
     - location: scripts/stop_server.sh
