@@ -28,3 +28,7 @@ yarn-error.log*
 .env.development.local
 .env.test.local
 .env.production.local
+#lockignore
+git rm --cached package-lock.json
+git commit -m "Ignore package-lock.json from deployments"
+git push origin main
