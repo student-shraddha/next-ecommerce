@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: opt/codedeploy-agent/deployment-root/ec0e87c3-2371-4d26-abd7-2c8659e89e71/
+    destination:
 hooks:
   BeforeInstall:
     - location: scripts/stop_server.sh
