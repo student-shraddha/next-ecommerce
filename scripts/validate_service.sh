@@ -1,10 +1,9 @@
 #!/bin/bash
-# Check if the app is running by looking for its process
-pm2 show nextjs-calculator | grep "status" | grep -q "online"
-
-if [ $? -ne 0 ]; then
-  echo "Application is not running"
-  exit 1
+# Check if the application is running
+if pm2 list | grep -q next-ecommerce; then
+  echo "Application is running."
 else
-  echo "Application is running"
+  echo "Application is not running." >&2
+  exit 1
 fi
+
