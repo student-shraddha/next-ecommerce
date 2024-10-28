@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the path to package-lock.json
-PACKAGE_LOCK="/home/ec2-user/nextjs-calculator/package-lock.json"
+PACKAGE_LOCK="/home/ec2-user/next-ecommerce/package-lock.json"
 
 # Check if package-lock.json exists and remove it
 if [ -f "$PACKAGE_LOCK" ]; then
