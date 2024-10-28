@@ -1,6 +1,6 @@
 #!/bin/bash
 
-APP_DIR="/home/ec2-user/nextjs-calculator"
+APP_DIR="/home/ec2-user/next-ecommerce"
 
 # Update packages and install dependencies
 sudo yum update -y
