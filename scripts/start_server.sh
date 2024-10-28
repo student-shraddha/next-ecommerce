@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Correct the path for your application
-APP_DIR="/home/ec2-user/nextjs-calculator"
+APP_DIR="/home/ec2-user/next-ecommerce"
+
 
 # Ensure the application directory exists
 if [ ! -d "$APP_DIR" ]; then
@@ -42,6 +43,6 @@ fi
 # Start the application with PM2
 pm2 delete all
 pm2 save
-pm2 start npm --name "nextjs-calculator" -- start || { echo "PM2 failed to start the application"; exit 1; }
+pm2 start npm --name "next-ecommerce" -- start || { echo "PM2 failed to start the application"; exit 1; }
 pm2 save
 pm2 startup || { echo "PM2 startup command failed"; exit 1; }
