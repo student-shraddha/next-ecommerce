@@ -5,27 +5,27 @@ files:
     destination: /home/ec2-user/next-ecommerce
 
 hooks:
-  # Stops the application if it's already running
   BeforeInstall:
-    - location: scripts/stop_server.sh
+    - location: scripts/before_install.sh
       timeout: 300
       runas: root
 
-  # Installs necessary dependencies after files are copied
   AfterInstall:
-    - location: scripts/install_dependencies.sh
+    - location: scripts/after_install.sh
       timeout: 300
       runas: root
 
-  # Starts the application
   ApplicationStart:
-    - location: scripts/start_server.sh
+    - location: scripts/application_start.sh
       timeout: 300
       runas: root
 
-  # Validates the service to confirm it's running as expected
+  ApplicationStop:
+    - location: scripts/application_stop.sh
+      timeout: 300
+      runas: root
+
   ValidateService:
     - location: scripts/validate_service.sh
       timeout: 300
       runas: root
-
