@@ -13,6 +13,7 @@ fi
 pm2 stop "next-ecommerce" || true
 
 # Start the application using PM2 with corrected syntax
+pm2 delete all
 pm2 start npm --name "next-ecommerce" -- start
 
 # Save the PM2 process list and configure it to restart on reboot
