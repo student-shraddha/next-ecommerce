@@ -9,8 +9,15 @@ if ! command -v pm2 &> /dev/null; then
     npm install -g pm2
 fi
 
-# Start the application using PM2
-pm2 start "npm start"--name "next-ecommerce" 
+# Stop any running instance of the application to prevent duplicates
+pm2 stop "next-ecommerce" || true
+
+# Start the application using PM2 with corrected syntax
+pm2 start npm --name "next-ecommerce" -- start
+
 # Save the PM2 process list and configure it to restart on reboot
 pm2 save
-pm2 startup -u ec2-user --hp /home/ec2-user
+pm2 startup systemd -u ec2-user --hp /home/ec2-user
+
+# Display success message
+echo "Application started and PM2 is configured to restart on reboot."
