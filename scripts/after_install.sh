@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo "Navigating to the application directory..."
+cd /home/ec2-user/next-ecommerce || exit
+
 echo "Installing Node.js..."
 sudo yum install -y nodejs
 
