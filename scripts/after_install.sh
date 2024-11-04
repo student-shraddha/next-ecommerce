@@ -10,8 +10,8 @@ if ! command -v pm2 &> /dev/null; then
 fi
 
 # Start the application using PM2
-pm2 start npm --name "next-ecommerce" -- start
-
+pm2 start "npm start"--name "next-ecommerce" 
+pm2 startup
 # Save the PM2 process list and configure it to restart on reboot
 pm2 save
 pm2 startup -u ec2-user --hp /home/ec2-user
